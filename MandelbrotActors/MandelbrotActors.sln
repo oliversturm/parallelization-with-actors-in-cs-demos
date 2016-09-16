@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.25618.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MandelbrotActors", "MandelbrotActors\MandelbrotActors.csproj", "{82296401-689A-430E-9455-B905E33A79E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomaticConcurrent", "AutomaticConcurrent\AutomaticConcurrent.csproj", "{87AC2DC9-8F84-4899-8EE0-AEEA18129EE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Old WinForms", "Old WinForms", "{87FC8CEE-0307-4E08-AEDA-7159C945FD0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalMandelbrotParallel", "FunctionalMandelbrotParallel\FunctionalMandelbrotParallel.csproj", "{E261B08C-B8AA-4389-A847-3C1DF5AD5FCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "New UIs", "New UIs", "{4CBB5407-3DDF-4928-A54A-0AD8DE77A777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsActorsMandelbrot", "WinFormsActorsMandelbrot\WinFormsActorsMandelbrot.csproj", "{80843432-193C-4CBC-8642-30327847C2DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfActorsMandelbrot", "WpfActorsMandelbrot\WpfActorsMandelbrot.csproj", "{1A12D3D7-2A7E-41C9-9D1B-D3D63B1415EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82296401-689A-430E-9455-B905E33A79E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82296401-689A-430E-9455-B905E33A79E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82296401-689A-430E-9455-B905E33A79E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82296401-689A-430E-9455-B905E33A79E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87AC2DC9-8F84-4899-8EE0-AEEA18129EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87AC2DC9-8F84-4899-8EE0-AEEA18129EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87AC2DC9-8F84-4899-8EE0-AEEA18129EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87AC2DC9-8F84-4899-8EE0-AEEA18129EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E261B08C-B8AA-4389-A847-3C1DF5AD5FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E261B08C-B8AA-4389-A847-3C1DF5AD5FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E261B08C-B8AA-4389-A847-3C1DF5AD5FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E261B08C-B8AA-4389-A847-3C1DF5AD5FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80843432-193C-4CBC-8642-30327847C2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80843432-193C-4CBC-8642-30327847C2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80843432-193C-4CBC-8642-30327847C2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80843432-193C-4CBC-8642-30327847C2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A12D3D7-2A7E-41C9-9D1B-D3D63B1415EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A12D3D7-2A7E-41C9-9D1B-D3D63B1415EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A12D3D7-2A7E-41C9-9D1B-D3D63B1415EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A12D3D7-2A7E-41C9-9D1B-D3D63B1415EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87AC2DC9-8F84-4899-8EE0-AEEA18129EE0} = {87FC8CEE-0307-4E08-AEDA-7159C945FD0D}
+		{E261B08C-B8AA-4389-A847-3C1DF5AD5FCC} = {87FC8CEE-0307-4E08-AEDA-7159C945FD0D}
+		{80843432-193C-4CBC-8642-30327847C2DE} = {4CBB5407-3DDF-4928-A54A-0AD8DE77A777}
+		{1A12D3D7-2A7E-41C9-9D1B-D3D63B1415EF} = {4CBB5407-3DDF-4928-A54A-0AD8DE77A777}
+	EndGlobalSection
+EndGlobal
