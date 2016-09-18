@@ -10,12 +10,7 @@ using Akka.Routing;
 namespace MandelbrotActors {
   public class AreaCalculator : ReceiveActor {
     public AreaCalculator() {
-      pointCalculator = Context.ActorOf(
-        Props.Create<PointCalculator>().
-        WithRouter(new RoundRobinPool(2)),
-        "pointCalculator");
-
-      //pointCalculator = Context.ActorOf<PointCalculator>("pointCalculator");
+      pointCalculator = Context.ActorOf<PointCalculator>("pointCalculator");
       // equivalent to 
       // Context.ActorOf(Props.Create<CalcPointActor>(), "calcPoint");
 
