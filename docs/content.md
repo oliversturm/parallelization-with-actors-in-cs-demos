@@ -1,4 +1,5 @@
-## Parallelization with Actors in C#
+Parallelization with Actors in C#
+---------------------------------
 
 > Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 
