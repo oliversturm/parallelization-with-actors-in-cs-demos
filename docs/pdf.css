@@ -1,0 +1,14 @@
+body {
+    font-size: 1em;
+}
+
+pagebreak {
+    display: block;
+    page-break-before: always;
+    break-before: always;
+}
+
+blockquote {
+    margin: auto;
+    border: none;
+}
