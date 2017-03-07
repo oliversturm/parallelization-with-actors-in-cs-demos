@@ -137,7 +137,7 @@ Demo source code: https://github.com/oliversturm/parallelization-with-actors-in-
 
 This presentation: https://oliversturm.github.io/parallelization-with-actors-in-cs-demos
 
-* Deprettified content in pdf format: https://oliversturm.github.io/cs-state-of-the-nation/slidecontent.pdf
+* Deprettified content in pdf format: https://oliversturm.github.io/parallelization-with-actors-in-cs-demos/slidecontent.pdf
 
 ---
 
