@@ -6,10 +6,21 @@ using Akka.Actor;
 using Akka.Event;
 using MandelbrotActors;
 
-namespace WinFormsActorsMandelbrot {
-  public class ResultReceiver : TypedActor, IHandle<ResultReceiver.Init>, IHandle<PointResult>, IHandle<AreaCalculator.AreaCalculatorDone> {
+namespace WinFormsActorsMandelbrotNew {
+  public class ResultReceiver : UntypedActor {
     System.Drawing.Point maxPoint = System.Drawing.Point.Empty, minPoint = System.Drawing.Point.Empty;
     int resultCount = 0;
+
+    protected override void OnReceive(object message) {
+      switch (message) {
+        case Init i:
+          Handle(i); break;
+        case PointResult pr:
+          Handle(pr); break;
+        case AreaCalculator.AreaCalculatorDone acd:
+          Handle(acd); break;
+      }
+    }
 
     public void Handle(Init init) {
       //syncContext = init.SyncContext;
@@ -25,6 +36,7 @@ namespace WinFormsActorsMandelbrot {
 
     public void Handle(PointResult pr) {
       if (bitmap == null) return;
+      if (bitmapLock == null) return;
 
       resultCount++;
 
@@ -39,43 +51,25 @@ namespace WinFormsActorsMandelbrot {
         maxPoint = new System.Drawing.Point(0, 0);
         minPoint = new System.Drawing.Point(Int32.MaxValue, Int32.MaxValue);
       }
-      //syncContext.Post(o => {
+      //syncContext?.Post(o => {
       //  panel.Invalidate();
       //}, null);
     }
 
     public void Handle(AreaCalculator.AreaCalculatorDone message) {
+      if (panel == null) return;
       invalidator.Tell(panel.ClientRectangle);
     }
 
 
     //readonly ILoggingAdapter logger = Logging.GetLogger(Context);
-    IActorRef invalidator;
+    IActorRef? invalidator;
 
-    Bitmap bitmap;
-    Panel panel;
-    //SynchronizationContext syncContext;
-    object bitmapLock;
+    Bitmap? bitmap;
+    Panel? panel;
+    //SynchronizationContext? syncContext;
+    object? bitmapLock;
 
-    public class Init {
-      public Init(/*SynchronizationContext syncContext, */object bitmapLock, IActorRef invalidator, Panel panel, Bitmap bitmap, int width, int height) {
-        //SyncContext = syncContext;
-        BitmapLock = bitmapLock;
-        Invalidator = invalidator;
-        Panel = panel;
-        Bitmap = bitmap;
-        Width = width;
-        Height = height;
-      }
-
-      //public SynchronizationContext SyncContext { get; }
-      public object BitmapLock { get; }
-      public IActorRef Invalidator { get; }
-      public Panel Panel { get; }
-      public Bitmap Bitmap { get; }
-      public int Width { get; }
-      public int Height { get; }
-    }
-
+    public record Init(/*SynchronizationContext syncContext, */object BitmapLock, IActorRef Invalidator, Panel Panel, Bitmap Bitmap, int Width, int Height);
   }
 }

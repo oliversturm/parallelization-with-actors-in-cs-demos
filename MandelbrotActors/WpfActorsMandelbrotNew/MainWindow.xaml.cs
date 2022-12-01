@@ -1,22 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Akka.Actor;
+﻿using Akka.Actor;
 using Akka.Configuration;
 using MandelbrotActors;
+using System.Windows;
 
-namespace WpfActorsMandelbrot {
+namespace WpfActorsMandelbrotNew {
   /// <summary>
   /// Interaction logic for MainWindow.xaml
   /// </summary>
@@ -66,8 +53,8 @@ synchronized-dispatcher {
     }
 
     private void drawButton_Click(object sender, RoutedEventArgs e) {
-      int imageWidth = (int) imagePanel.ActualWidth;
-      int imageHeight = (int) imagePanel.ActualHeight;
+      int imageWidth = (int)imagePanel.ActualWidth;
+      int imageHeight = (int)imagePanel.ActualHeight;
 
       ResultReceiver.Tell(new ResultReceiver.Init(image, imageWidth, imageHeight));
 
@@ -79,9 +66,10 @@ synchronized-dispatcher {
       double xstep = (xend - xstart) / imageWidth;
       double ystep = (yend - ystart) / imageHeight;
 
-      AreaCalculator.Tell(new AreaCalculator.CalcArea(ResultReceiver, 
+      AreaCalculator.Tell(new AreaCalculator.CalcArea(ResultReceiver,
         imageWidth, imageHeight,
         new CalcInfo(xstart, xstep, ystart, ystep, 1000)));
     }
+
   }
 }
