@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Akka.Configuration;
 using Akka.Actor;
-using Akka.Configuration;
 
-namespace EmptyActorService
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      var config = ConfigurationFactory.ParseString(@"
+var config = ConfigurationFactory.ParseString(@"
 akka {
     stdout-loglevel = DEBUG
     loglevel = DEBUG
@@ -27,13 +19,7 @@ akka {
 }
 ");
 
-      using (var system = ActorSystem.Create("EmptyActorService", config))
-      {
-        Console.WriteLine("Empty Actor Service is running");
-        Console.ReadLine();
-      }
-    }
-  }
+using (var system = ActorSystem.Create("EmptyActorService", config)) {
+  Console.WriteLine("Empty Actor Service is running");
+  Console.ReadLine();
 }
-
-
