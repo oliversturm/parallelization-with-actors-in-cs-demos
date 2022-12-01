@@ -12,45 +12,24 @@ namespace WpfActorsMandelbrotNew {
       InitializeComponent();
     }
 
-    ActorSystem actorSystem;
-    public ActorSystem MandelbrotActors {
-      get {
-        if (actorSystem == null) {
-          var config = ConfigurationFactory.ParseString(@"
+    ActorSystem? actorSystem;
+    public ActorSystem MandelbrotActors => actorSystem ??=
+      ActorSystem.Create("MandelbrotSystem", ConfigurationFactory.ParseString(@"
 synchronized-dispatcher {
   type = ""SynchronizedDispatcher""
   throughput = 10
 }
-");
+"));
 
-          actorSystem = ActorSystem.Create("MandelbrotSystem", config);
-        }
+    IActorRef? areaCalculator;
+    public IActorRef AreaCalculator => areaCalculator ??=
+      MandelbrotActors.ActorOf(Props.Create<AreaCalculator>(), "areaCalculator");
 
-        return actorSystem;
-      }
-    }
-
-    IActorRef areaCalculator;
-    public IActorRef AreaCalculator {
-      get {
-        if (areaCalculator == null) {
-          areaCalculator = MandelbrotActors.ActorOf(Props.Create<AreaCalculator>(), "areaCalculator");
-        }
-        return areaCalculator;
-      }
-    }
-
-    IActorRef resultReceiver;
-    public IActorRef ResultReceiver {
-      get {
-        if (resultReceiver == null) {
-          resultReceiver = MandelbrotActors.ActorOf(
+    IActorRef? resultReceiver;
+    public IActorRef ResultReceiver => resultReceiver ??=
+      MandelbrotActors.ActorOf(
             Props.Create<ResultReceiver>().WithDispatcher("synchronized-dispatcher"),
             "resultReceiver");
-        }
-        return resultReceiver;
-      }
-    }
 
     private void drawButton_Click(object sender, RoutedEventArgs e) {
       int imageWidth = (int)imagePanel.ActualWidth;

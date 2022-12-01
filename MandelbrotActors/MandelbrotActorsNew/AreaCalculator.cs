@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Akka.Actor;
-using Akka.Routing;
+﻿using Akka.Actor;
 
 namespace MandelbrotActors {
   public class AreaCalculator : ReceiveActor {
     public AreaCalculator() {
-      //pointCalculator = Context.ActorOf<PointCalculator>("pointCalculator");
+      pointCalculator = Context.ActorOf<PointCalculator>("pointCalculator");
       // equivalent to 
       // Context.ActorOf(Props.Create<CalcPointActor>(), "calcPoint");
-
-      pointCalculator = Context.ActorOf(Props.Create<PointCalculator>().
-        WithRouter(new RoundRobinPool(2)), "pointCalculator");
 
       Become(Free);
     }
@@ -53,7 +43,7 @@ namespace MandelbrotActors {
         for (int x = 0; x < width; x++)
           yield return new Point(x, y);
     }
-  
+
     public class AreaCalculatorDone { }
     public class PointDone { }
 

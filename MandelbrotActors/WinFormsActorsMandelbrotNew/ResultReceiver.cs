@@ -1,9 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using Akka.Actor;
-using Akka.Event;
+﻿using Akka.Actor;
 using MandelbrotActors;
 
 namespace WinFormsActorsMandelbrotNew {
@@ -46,7 +41,7 @@ namespace WinFormsActorsMandelbrotNew {
       lock (bitmapLock)
         bitmap.SetPixel(pr.Point.X, pr.Point.Y,
           System.Drawing.Color.FromArgb(pr.Color.R, pr.Color.G, pr.Color.B));
-      if (resultCount % 1000 == 0) {
+      if (resultCount % 10000 == 0) {
         invalidator.Tell(new Rectangle(minPoint, new Size(maxPoint.X - minPoint.X, maxPoint.Y - minPoint.Y)));
         maxPoint = new System.Drawing.Point(0, 0);
         minPoint = new System.Drawing.Point(Int32.MaxValue, Int32.MaxValue);
