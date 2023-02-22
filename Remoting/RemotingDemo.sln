@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMessages", "HelloMessages\HelloMessages.csproj", "{06116C2A-8888-4C60-B3B1-2C7901C04DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloServer", "HelloServer\HelloServer.csproj", "{D02967EB-9380-42AE-A09D-22DF1045B95D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloClient", "HelloClient\HelloClient.csproj", "{58041C64-4F90-41C1-BB4C-476AFD33FC9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06116C2A-8888-4C60-B3B1-2C7901C04DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06116C2A-8888-4C60-B3B1-2C7901C04DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06116C2A-8888-4C60-B3B1-2C7901C04DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06116C2A-8888-4C60-B3B1-2C7901C04DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02967EB-9380-42AE-A09D-22DF1045B95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02967EB-9380-42AE-A09D-22DF1045B95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02967EB-9380-42AE-A09D-22DF1045B95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02967EB-9380-42AE-A09D-22DF1045B95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58041C64-4F90-41C1-BB4C-476AFD33FC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58041C64-4F90-41C1-BB4C-476AFD33FC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58041C64-4F90-41C1-BB4C-476AFD33FC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58041C64-4F90-41C1-BB4C-476AFD33FC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
