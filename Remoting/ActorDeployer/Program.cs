@@ -22,6 +22,9 @@ var config = ConfigurationFactory.ParseString(@"
       }
   }");
 
+Console.WriteLine("Press RETURN to start the client");
+Console.ReadLine();
+
 using (var system = ActorSystem.Create("client", config)) {
   var helloActor = system.ActorOf(Props.Create(() => new HelloActor()), "DeployedHello");
 
